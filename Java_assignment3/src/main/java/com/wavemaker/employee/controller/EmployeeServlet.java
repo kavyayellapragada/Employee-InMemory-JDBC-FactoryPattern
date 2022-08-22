@@ -22,8 +22,8 @@ public class EmployeeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //TODO Get Persistance type from request or configuration/ property file or environment
-        List<Employee> users = employeeManager.listEmployees();
-        response.getWriter().write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(users));
+        List<Employee> emps = employeeManager.listEmployees();
+        response.getWriter().write(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(emps));
     }
 
 
