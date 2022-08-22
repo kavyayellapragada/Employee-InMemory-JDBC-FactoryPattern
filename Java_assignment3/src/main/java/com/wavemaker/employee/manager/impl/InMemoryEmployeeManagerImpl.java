@@ -20,10 +20,10 @@ public class InMemoryEmployeeManagerImpl implements EmployeeManager {
     public void updateEmployee(Employee emp) {
         ListIterator<Employee> empListIterator = empsList.listIterator();
         while (empListIterator.hasNext()) {
-            Employee existingUser = empListIterator.next();
-            if (existingUser.getId() == emp.getId()) {
-                //userListIterator.set(user);
-                existingUser.setFirstName(emp.getFirstName());
+            Employee existingEmp = empListIterator.next();
+            if (existingEmp.getId() == emp.getId()) {
+                //empListIterator.set(emp);
+                existingEmp.setFirstName(emp.getFirstName());
             }
         }
     }
@@ -64,10 +64,10 @@ public class InMemoryEmployeeManagerImpl implements EmployeeManager {
         boolean flag = false;
         Iterator<Employee> empIterator = empsList.iterator();
         while (empIterator.hasNext()) {
-            Employee user = empIterator.next();
-            if (user.getFirstName().equals(searchWord)) {
+            Employee emp = empIterator.next();
+            if (emp.getFirstName().equals(searchWord)) {
                 flag = true;
-                searchlist.add(user);
+                searchlist.add(emp);
                 break;
 
             }
